@@ -1,0 +1,42 @@
+{
+  "name": "4letters",
+  "version": "1.0.0",
+  "description": "it's a real sweet app",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo . -d --serve bundle.js --live -t brfs",
+    "build": "browserify . -o bundle.js -g uglifyify",
+    "test": "browserify test.js | smokestack | tap-spec",
+    "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
+    "push": "gh-pages -d dist",
+    "deploy": "npm run build && npm run dist && npm run push"
+  },
+  "browserify": {
+    "transform": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suresh%20Swamy/4letters.git"
+  },
+  "author": "Suresh Swamy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Suresh Swamy/4letters/issues"
+  },
+  "homepage": "https://github.com/Suresh Swamy/4letters",
+  "dependencies": {},
+  "devDependencies": {
+    "brfs": "^1.4.3",
+    "browserify": "^10.0.0",
+    "budo": "^4.0.0",
+    "gh-pages": "^0.3.0",
+    "smokestack": "^3.3.0",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.1.0"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
